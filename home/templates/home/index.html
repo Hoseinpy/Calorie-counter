@@ -7,7 +7,9 @@
     <center><h1 style="color: darkgreen;">Calorie Counter</h1></center>
 </head>
 <body>
-    <a href="{% url 'user_food_list' %}"><h1>Your Food Calorie: {{ user_calorie }}</h1></a>
+    <h1><a href="{% url 'user_food_list' %}">Your Food List</a></h1>
+    <h2>Your Food Calorie: {{ user_calorie }}</h2>
+    <h2>Your Food Protin: {{ user_protin }}</h2>
     <hr>
     <form action="{% url 'index-page' %}" method="post">
         {% csrf_token %}

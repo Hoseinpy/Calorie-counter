@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <h1>Your Food Calorie: {{ user_calorie }}</h1>
+    <h1><a href="/">HOME</a></h1>
 </head>
 <body>
+    <h2>Your Food Calorie: {{ user_calorie }}</h2>
+    <h2>Your Food Protin: {{ user_protin }}</h2>
     {% for food in user_food_list %}
     <a href="{% url 'food-detail' food_id=food.food.id %}"><h2>{{ food.food }}</h2></a>
     {% endfor %}

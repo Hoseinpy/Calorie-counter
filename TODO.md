@@ -1,4 +1,4 @@
-- [ ] add more info about food model
+- [x] add more info about food model
 - [ ] make batter front for site
-- [ ] create api for app
-- [ ] add swagger for api
+- [x] create basic api for app
+- [x] add swagger for api

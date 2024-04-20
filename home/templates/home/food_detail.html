@@ -6,8 +6,10 @@
     <title>home</title>
 </head>
 <body>
+    <h1><a href="/">HOME</a></h1>
     <center><h1 style="color: darkgreen;">{{ food.name }}</h1></center>
     <h2>food calorie: {{ food.calorie }}</h2>
+    <h2>food protin: {{ food.protin }}</h2>
     <form action="{% url 'food-detail' food_id=food.id %}" method="post">
         {% csrf_token %}
         {% if user_food_list %}
