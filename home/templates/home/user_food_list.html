@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <h1>Your Food Calorie: {{ user_calorie }}</h1>
+</head>
+<body>
+    {% for food in user_food_list %}
+    <a href="{% url 'food-detail' food_id=food.food.id %}"><h2>{{ food.food }}</h2></a>
+    {% endfor %}
+</body>
+</html>

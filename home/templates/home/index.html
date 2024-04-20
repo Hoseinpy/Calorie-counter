@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <center><h1 style="color: darkgreen;">Calorie Counter</h1></center>
+</head>
+<body>
+    <a href="{% url 'user_food_list' %}"><h1>Your Food Calorie: {{ user_calorie }}</h1></a>
+    <hr>
+    <form action="{% url 'index-page' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search_food">
+        <input type="submit" value="found">
+    </form>
+    {% if search_food %}
+    {% for s_food in search_food %}
+    <a href="{% url 'food-detail' food_id=s_food.id %}"><h1>{{ s_food.name }}</h1></a>
+    {% endfor %}
+    {% else %}
+    {% for food in foods %}
+    <a href="{% url 'food-detail' food_id=food.id %}"><h1>{{ food.name }}</h1></a>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
